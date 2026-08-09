@@ -38,6 +38,6 @@ title = "ProHomeLab – все о homelab и self-hosting"
    { github = "https://github.com/stilicho2011/ubuntu_rep" },
    { telegram = "https://t.me/stilicho2011_videos" },
    { youtube = "https://www.youtube.com/@ProHomelab" },
-   { ko-fi = "https://boosty.to/stilicho2011"}
-   { rss = "/index.xml" }
+   { ko-fi = "https://boosty.to/stilicho2011"},
+   { rss = "/index.xml"},
   ]

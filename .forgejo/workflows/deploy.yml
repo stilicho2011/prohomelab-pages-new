@@ -1,0 +1,37 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  repository_dispatch:
+    types: [content-updated]
+
+jobs:
+  deploy:
+    runs-on: host
+    steps:
+      - name: Checkout site repo
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Sync content from Obsidian repo
+        env:
+          CONTENT_REPO_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
+        run: bash scripts/sync-content.sh
+
+      - name: Build with Hugo
+        run: hugo -D --minify
+
+      - name: Deploy to smartape via FTP
+        env:
+          FTP_HOST: ${{ secrets.SMARTAPE_FTP_HOST }}
+          FTP_USER: ${{ secrets.SMARTAPE_FTP_USER }}
+          FTP_PASS: ${{ secrets.SMARTAPE_FTP_PASS }}
+        run: |
+          lftp -u "$FTP_USER,$FTP_PASS" "$FTP_HOST" <<'INNEREOF'
+          set ftp:ssl-allow yes
+          mirror -R --delete --verbose public/ /www/prohomelab
+          bye
+          INNEREOF

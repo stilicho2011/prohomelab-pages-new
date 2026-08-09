@@ -1,12 +1,12 @@
 disabled = false
-languageCode = "ru"
-languageName = "Russian"
+locale = "ru-RU"
+label = "Russian"
 weight = 1
 title = "ProHomeLab – все о homelab и self-hosting"
 
 [params]
   displayName = "RU"
-  isoCode = "ru"
+  isoCode = "ru-RU"
   rtl = false
   dateFormat = "2 January 2006"
   description = "Сайт про homelab, self-hosting и IT: инструкции по установке серверов, виртуализация, Docker, Proxmox, безопасность и автоматизация."
@@ -34,9 +34,10 @@ title = "ProHomeLab – все о homelab и self-hosting"
   headline = "Автор блога и YouTube-канала ProHomeLab"
   bio = "Пишу о homelab, self-hosting, автоматизации и open-source решениях"
   links = [
-   { email = "mailto:pavel@prohomelab.com" },
+   { email = "pavel@prohomelab.com" },
    { github = "https://github.com/stilicho2011/ubuntu_rep" },
    { telegram = "https://t.me/stilicho2011_videos" },
    { youtube = "https://www.youtube.com/@ProHomelab" },
    { ko-fi = "https://boosty.to/stilicho2011"}
+   { rss = "/index.xml" }
   ]

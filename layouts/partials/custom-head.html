@@ -1,0 +1,5 @@
+{{- if .IsHome -}}
+<link rel="canonical" href="{{ .Site.BaseURL }}">
+{{- else -}}
+<link rel="canonical" href="{{ .Permalink }}">
+{{- end -}}

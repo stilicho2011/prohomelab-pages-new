@@ -1,0 +1,42 @@
+disabled = false
+languageCode = "ru"
+languageName = "Russian"
+weight = 1
+title = "ProHomeLab – все о homelab и self-hosting"
+
+[params]
+  displayName = "RU"
+  isoCode = "ru"
+  rtl = false
+  dateFormat = "2 January 2006"
+  description = "Сайт про homelab, self-hosting и IT: инструкции по установке серверов, виртуализация, Docker, Proxmox, безопасность и автоматизация."
+  images = ["/images/og-default.png"]
+  copyright = "&copy; 2025-2026 Stilicho2011. All Rights Reserved."
+  logo = "/logo3.png"
+  # secondaryLogo = "img/secondary-logo.png"
+
+[params.seo]
+  title = "ProHomeLab – homelab, self-hosting и IT-гайды от Stilicho2011"
+  description = "ProHomeLab – практические гайды по homelab, self-hosting и open-source: установка серверов, Docker, Proxmox, Traefik, Nextcloud, Authentik и автоматизация от Stilicho2011."
+  keywords = ["homelab", "self-hosting", "Proxmox", "Docker", "Nextcloud", "Traefik", "сервер дома", "виртуализация", "Hugo", "LXC", "Linux", "резервное копирование", "SSO", "VPN", "ZFS", "Kubernetes", "Authelia", "Ansible", "devops", "stilicho2011"]
+
+[params.opengraph]
+  enable = true
+  title = "ProHomeLab – homelab и self-hosting"
+  description = "ProHomeLab – гайды и инструкции по homelab и self-hosting"
+  images = ["https://prohomelab.com/images/og-default.png"]
+
+[params.author]
+  name = "Stilicho2011"
+  email = "pavel@prohomelab.com" # если сделаешь корпоративный адрес, лучше заменить
+  image = "https://avatars.githubusercontent.com/u/149189831?v=4"
+  imageQuality = 96
+  headline = "Автор блога и YouTube-канала ProHomeLab"
+  bio = "Пишу о homelab, self-hosting, автоматизации и open-source решениях"
+  links = [
+   { email = "mailto:pavel@prohomelab.com" },
+   { github = "https://github.com/stilicho2011/ubuntu_rep" },
+   { telegram = "https://t.me/stilicho2011_videos" },
+   { youtube = "https://www.youtube.com/@ProHomelab" },
+   { ko-fi = "https://boosty.to/stilicho2011"}
+  ]

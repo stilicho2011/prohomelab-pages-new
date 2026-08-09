@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /tags/preview/
+Disallow: /search/
+
+Sitemap: https://prohomelab.com/sitemap.xml
+
+
+

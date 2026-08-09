@@ -1,0 +1,183 @@
+# -- Main Menu --
+# The main menu is displayed in the header at the top of the page.
+# Acceptable parameters are name, pageRef, page, url, title, weight.
+# 
+# The simplest menu configuration is to provide:
+#   name = The name to be displayed for this menu link
+#   pageRef = The identifier of the page or section to link to
+#
+# By default the menu is ordered alphabetically. This can be
+# overridden by providing a weight value. The menu will then be
+# ordered by weight from lowest to highest.
+
+#[[main]]
+#  name = "Домой"
+#  pageRef = "/"
+#  weight = 1
+
+[[main]]
+  name = "Темы"
+  pageRef = "posts"
+  weight = 30
+
+  [[main]]
+    name = "Authentik"
+    pageRef = "posts/Authentik"
+    parent = "Темы"
+    weight = 1
+
+  [[main]]
+    name = "Crowdsec"
+    pageRef = "posts/Crowdsec"
+    parent = "Темы"
+    weight = 2
+
+  [[main]]
+    name = "Network"
+    pageRef = "posts/Network"
+    parent = "Темы"
+    weight = 3
+
+  [[main]]
+    name = "News"
+    pageRef = "posts/News"
+    parent = "Темы"
+    weight = 4
+
+  [[main]]
+    name = "Nextcloud"
+    pageRef = "posts/Nextcloud"
+    parent = "Темы"
+    weight = 5
+
+  [[main]]
+    name = "OPNsense"
+    pageRef = "posts/Opnsense"
+    parent = "Темы"
+    weight = 6
+
+  [[main]]
+    name = "Podman"
+    pageRef = "posts/Podman"
+    parent = "Темы"
+    weight = 7
+
+  [[main]]
+    name = "Proxmox"
+    pageRef = "posts/Proxmox"
+    parent = "Темы"
+    weight = 8
+
+  [[main]]
+    name = "Selfhosting"
+    pageRef = "posts/Selfhosting"
+    parent = "Темы"
+    weight = 9
+
+  [[main]]
+    name = "Single Sign On"
+    pageRef = "posts/Single Sign On"
+    parent = "Темы"
+    weight = 10
+
+  [[main]]
+    name = "Terraform"
+    pageRef = "posts/Terraform"
+    parent = "Темы"
+    weight = 11
+
+  [[main]]
+    name = "Traefik"
+    pageRef = "posts/Traefik"
+    parent = "Темы"
+    weight = 12
+
+[[main]]
+  name = "Categories"
+  pageRef = "categories"
+  weight = 40
+
+[[main]]
+  name = "О проекте"
+  pageRef = "about"
+  weight = 50
+
+[[main]]
+  name = "Tags"
+  pageRef = "tags"
+  weight = 60
+
+[[main]]
+  identifier = "youtube"
+  pre= "youtube"
+  url = "https://www.youtube.com/@prohomelab"
+  weight = 70
+
+[[main]]
+  identifier = "github"
+  pre= "github"
+  url = "https://github.com/stilicho2011/ubuntu_rep"
+  weight = 80
+
+[[main]]
+  identifier = "telegram"
+  pre= "telegram"
+  url = "https://t.me/stilicho2011_videos"
+  weight = 90
+
+[[main]]
+  identifier = "ko-fi"
+  pre= "ko-fi"
+  url = "https://boosty.to/stilicho2011"
+  weight = 100
+
+#[[main]]
+#  name = "Parent"
+#  weight = 20
+
+#[[main]]
+#  name = "example sub-menu 1"
+#  parent = "Parent"
+#  pageRef = "posts"
+#  weight = 20
+
+#[[main]]
+#  name = "example sub-menu 2"
+#  parent = "Parent"
+#  pageRef = "posts"
+#  weight = 20
+
+#[[subnavigation]]
+#  name = "An interesting topic"
+#  pageRef = "tags/interesting-topic"
+#  weight = 10
+
+#[[subnavigation]]
+#  name = "My Awesome Category"
+#  pre = "github"
+#  pageRef = "categories/awesome"
+#  weight = 20
+
+#[[main]]
+#  name = "Categories"
+#  pageRef = "categories"
+#  weight = 20
+
+# -- Footer Menu --
+# The footer menu is displayed at the bottom of the page, just before
+# the copyright notice. Configure as per the main menu above.
+
+# [[footer]]
+#   name = "Changelog"
+#   pageRef = "changelog"
+#   weight = 10
+
+# [[footer]]
+#   name = "Tags"
+#   pageRef = "tags"
+#   weight = 10
+
+# [[footer]]
+#   name = "Categories"
+#   pageRef = "categories"
+#   weight = 20

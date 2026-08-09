@@ -29,7 +29,7 @@ jobs:
           FTP_PASS: ${{ secrets.SMARTAPE_FTP_PASS }}
         run: |
           lftp -u "$FTP_USER,$FTP_PASS" "$FTP_HOST" <<'INNEREOF'
-          set ftp:ssl-allow yes
-          mirror -R --delete --verbose public/ /www/prohomelab
+          set ssl:verify-certificate no
+          mirror -R --delete --verbose public/ /www/prohomelab.com
           bye
           INNEREOF

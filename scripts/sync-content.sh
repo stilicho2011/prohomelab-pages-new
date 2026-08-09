@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CONTENT_REPO_URL="https://forgejo.vaultlab.ru/Pavel/prohomelab-content.git"
+export GIT_TERMINAL_PROMPT=0
+
+CONTENT_REPO_HOST="forgejo.vaultlab.ru/Pavel/prohomelab-content.git"
 CONTENT_DIR="/tmp/prohomelab-content"
 TARGET_DIR="content/posts"
+
+if [ -n "${CONTENT_REPO_TOKEN:-}" ]; then
+  CONTENT_REPO_URL="https://Pavel:${CONTENT_REPO_TOKEN}@${CONTENT_REPO_HOST}"
+else
+  echo "ERROR: CONTENT_REPO_TOKEN is not set" >&2
+  exit 1
+fi
 
 rm -rf "$CONTENT_DIR"
 git clone --depth 1 "$CONTENT_REPO_URL" "$CONTENT_DIR"

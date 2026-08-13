@@ -70,5 +70,7 @@ googleAnalytics = "G-VRHQGK81S9"
         weight = 10
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"][frontmatter]
+  home = ["HTML", "RSS", "JSON"]
+
+[frontmatter]
   publishDate = ['publishdate', 'pubdate', 'date']

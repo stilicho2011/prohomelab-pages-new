@@ -1,9 +1,15 @@
 ---
 title: "Forgejo + Komodo: версионируем и автоматически передеплоиваем все docker-стэки"
-date: 
-draft: true
-tags: ["forgejo", "komodo", "docker", "self-hosting", "gitops"]
-categories: ["homelab"]
+date: 2026-10-11
+draft: false
+tags:
+  - forgejo
+  - komodo
+  - docker
+  - self-hosting
+  - gitops
+categories:
+  - homelab
 ---
 
 ## Зачем это вообще нужно

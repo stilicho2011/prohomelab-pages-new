@@ -8,7 +8,7 @@ tags:
   - Self-Hosting
   - Docker
 slug: /mealie
-categories: Self-hosted
+categories: Recipes
 licenseName: CC BY 4.0
 author: Stilicho2011
 draft: false
@@ -27,7 +27,7 @@ summary: Пошаговая инструкция по установке и на
 
 <iframe width="100%" height="468" src="https://www.youtube.com/embed/IyfOr-gnVYg?si=HDkXIqM64LZz_p6N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-![](56229bc824840a680286166b94c86540_MD5.png)
+![[56229bc824840a680286166b94c86540_MD5.png]]
 
 ## Что такое Mealie
 

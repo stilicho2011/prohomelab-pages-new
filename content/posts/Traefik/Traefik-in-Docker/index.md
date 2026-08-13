@@ -65,7 +65,7 @@ Traefik идеально подходит для devops и продакшн-ок
 
 ### Что такое Routers, Middlewares и Services в обратном прокси Traefik
 
-![Схема работы обратного прокси Traefik](01-Projects/Prohomelab/Traefik/Traefik-in-Docker/static-dynamic-configuration.png)
+![Схема работы обратного прокси Traefik](static-dynamic-configuration.png)
 
 Traefik использует в своей конфигурации три основных компонента: (routers) маршрутизаторы, (services) службы и (middlewares ) промежуточное программное обеспечение
 
@@ -91,7 +91,7 @@ Traefik использует в своей конфигурации три ос�
 
 Итак, давайте уделим время изучению некоторых важных деталей конфигурации Traefik, а именно статической и динамической конфигурации.
 
-![Схема работы обратного прокси Traefik](01-Projects/Prohomelab/Traefik/Traefik-in-Docker/static-dynamic-configuration.png)
+![Схема работы обратного прокси Traefik](static-dynamic-configuration.png)
 
 ### Динамическая конфигурация
 
@@ -140,32 +140,32 @@ Traefik использует в своей конфигурации три ос�
 
 Переходите в ваш профайл
 
-![Переход в профайл](01-Projects/Prohomelab/Traefik/Traefik-in-Docker/traefik-proxy-cf-0.png)
+![Переход в профайл](traefik-proxy-cf-0.png)
 
 Переходим в меню для создания токена
 
-![Создаем токен](01-Projects/Prohomelab/Traefik/Traefik-in-Docker/traefik-proxy-cf-1.png)
+![Создаем токен](traefik-proxy-cf-1.png)
 
 Начинаем создавать кастомный токен
 
-![Кастомный токен](01-Projects/Prohomelab/Traefik/Traefik-in-Docker/traefik-proxy-cf-2.png)
+![Кастомный токен](traefik-proxy-cf-2.png)
 
 Задаем конкретные настройки токена
 
-![настройки токена](01-Projects/Prohomelab/Traefik/Traefik-in-Docker/traefik-proxy-cf-3.png)
+![настройки токена](traefik-proxy-cf-3.png)
 
 Создаем токен
 
-![Создание токена](01-Projects/Prohomelab/Traefik/Traefik-in-Docker/traefik-proxy-cf-4.png)
+![Создание токена](traefik-proxy-cf-4.png)
 
 Скопируйте значения вашего токена и сохраните в безопасном месте, так как посмотреть еще раз значения токена в профиле cloudflare у вас не получится.
 Полученный токен мы с вами будем использоваться на настройки нашего прокси как сервиса, и он позволяет управлять нашими сертификатами с помощью Cloudflare. Если вы потеряете токен, то единственным выходом будет только его пересоздание с нуля.
 
-![Значения токена](01-Projects/Prohomelab/Traefik/Traefik-in-Docker/traefik-proxy-cf-5.png)
+![Значения токена](traefik-proxy-cf-5.png)
 
 Можете посмотреть все токены, которые вы создали с помощью cloudflare
 
-![Список токенов](01-Projects/Prohomelab/Traefik/Traefik-in-Docker/traefik-proxy-cf-6.png)
+![Список токенов](traefik-proxy-cf-6.png)
 
 ---
 

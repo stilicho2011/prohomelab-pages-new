@@ -9,7 +9,7 @@ tags:
   - Homelab
   - Dockhand
 slug: /dockhand-docker-web-ui
-categories: Docker
+categories: Docker UI
 licenseName: CC BY 4.0
 author: Stilicho2011
 draft: false
@@ -449,4 +449,3 @@ Dockhand позволяет проверять обновлений контей
 -  Гибкая настройка интерфейса  
 
 И как итог, - Dockhand отличная замена Portainer в домашнем окружении и отличный выбор, если тебе нужен **баланс между простотой и функциональностью**.
-

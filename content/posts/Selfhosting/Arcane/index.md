@@ -1,6 +1,6 @@
 ---
 title: "Arcane — современный менеджер Docker: обзор, установка и настройка"
-published: true
+published: 2026-10-01
 pinned: false
 description: "Разбираемся, что такое Arcane — открытый веб-интерфейс для управления Docker, — и пошагово поднимаем его через Docker Compose: секреты, подключение существующих стеков, reverse proxy и базовая безопасность."
 tags: ["docker", "arcane", "self-hosting", "homelab"]

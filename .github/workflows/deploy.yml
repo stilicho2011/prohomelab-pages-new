@@ -16,25 +16,13 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.164.0
+    runs-on: self-hosted
     steps:
-      - name: Install Hugo CLI
-        run: |
-          curl -sL "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb" -o /tmp/hugo.deb
-          sudo dpkg -i /tmp/hugo.deb
-
       - name: Checkout site repo
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
-
-      - name: Sync content from Obsidian repo
-        env:
-          CONTENT_REPO_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
-        run: bash scripts/sync-content.sh
 
       - name: Setup Pages
         id: pages
@@ -50,7 +38,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

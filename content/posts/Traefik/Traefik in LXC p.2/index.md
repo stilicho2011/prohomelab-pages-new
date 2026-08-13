@@ -14,8 +14,7 @@ categories: Traefik
 licenseName: CC BY 4.0
 author: Stilicho2011
 draft: false
-series:
-  - Traefik
+series: Traefik
 toc: true
 showDate: true
 showDateUpdated: true
@@ -428,6 +427,7 @@ nano /etc/traefik/dynamic/services/dashboard.yaml
 ```bash
 nano /etc/systemd/system/traefik.service
 ```
+
 
 ```ini
 # /etc/systemd/system/traefik.service

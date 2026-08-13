@@ -223,12 +223,12 @@ passwordauthentication no pubkeyauthentication yes permitrootlogin prohibit-pass
 
 ```bash
 # скачиваем архив c последней версией обратного прокси
-wget https://github.com/traefik/traefik/releases/download/v3.x.x/traefik_v3.x.x_linux_amd64.tar.gz
+wget https://github.com/traefik/traefik/releases/download/v3.4.4/traefik_v3.4.4_linux_amd64.tar.gz
 ```
 
 ```bash
 # распаковываем архив 
-tar -zxvf traefik_v3.x.x_linux_amd64.tar.gz
+tar -zxvf traefik_v3.4.4_linux_amd64.tar.gz
 ```
 
 ```bash

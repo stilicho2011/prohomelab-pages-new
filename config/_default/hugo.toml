@@ -73,4 +73,7 @@ googleAnalytics = "G-VRHQGK81S9"
   home = ["HTML", "RSS", "JSON"]
 
 [frontmatter]
-  publishDate = ['publishdate', 'pubdate', 'date']
+  date = ["date", "publishdate", "pubdate", "lastmod", "modified"]
+  lastmod = [":git", "lastmod", "modified", "date", "publishdate", "pubdate"]
+  publishDate = ["publishdate", "pubdate", "date"]
+  expiryDate = ["expirydate", "unpublishdate"]

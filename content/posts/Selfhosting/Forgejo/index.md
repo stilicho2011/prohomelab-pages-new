@@ -1,19 +1,19 @@
 ---
-title: "Forgejo + Komodo - превращаем Docker Compose в GitOps"
+title: Forgejo + Komodo - превращаем Docker Compose в GitOps
 published: 2026-09-21
 pinned: false
 description: "Настраиваем GitOps для Docker Compose с помощью Forgejo и Komodo: переносим compose-файлы в Git, подключаем репозиторий к Komodo, настраиваем вебхук и автоматический деплой изменившихся стеков на нескольких серверах."
-tags: 
+tags:
   - Docker
   - Forgejo
   - Komodo
   - Self-hosting
-slug: "forgejo-komodo-gitops"
-category: "docker"
-licenseName: "CC BY 4.0"
-author: "Stilicho2011"
+slug: forgejo-komodo-gitops
+categories: Docker
+licenseName: CC BY 4.0
+author: Stilicho2011
 draft: true
-series: 
+series:
   - Self-Hosting
 toc: true
 showDate: true

@@ -1,0 +1,46 @@
+<svg width="100%" viewBox="0 0 680 536" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Структура проекта Hugo + Blowfish</title>
+<desc>Репозиторий сайта содержит статьи, настройки и шаблон статьи, а тема Blowfish подключена отдельным репозиторием через submodule; Hugo объединяет всё это и собирает готовый сайт</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+<style>
+text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+.th { font-size: 14px; font-weight: 500; }
+.ts { font-size: 12px; font-weight: 400; }
+</style>
+
+<rect x="80" y="40" width="520" height="224" rx="16" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="th" x="340" y="72" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">Что лежит в репозитории сайта</text>
+<text class="ts" x="340" y="90" text-anchor="middle" dominant-baseline="central" fill="#444441">Ваш git-репозиторий (prohomelab-site)</text>
+
+<rect x="100" y="104" width="232" height="64" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text class="th" x="216" y="126" text-anchor="middle" dominant-baseline="central" fill="#04342C">content/</text>
+<text class="ts" x="216" y="148" text-anchor="middle" dominant-baseline="central" fill="#085041">Статьи (page bundles)</text>
+
+<rect x="348" y="104" width="232" height="64" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text class="th" x="464" y="126" text-anchor="middle" dominant-baseline="central" fill="#04342C">config/_default/</text>
+<text class="ts" x="464" y="148" text-anchor="middle" dominant-baseline="central" fill="#085041">Настройки по смыслу (TOML)</text>
+
+<rect x="100" y="180" width="232" height="64" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text class="th" x="216" y="202" text-anchor="middle" dominant-baseline="central" fill="#04342C">archetypes/</text>
+<text class="ts" x="216" y="224" text-anchor="middle" dominant-baseline="central" fill="#085041">Шаблон новой статьи</text>
+
+<rect x="348" y="180" width="232" height="64" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5" stroke-dasharray="4 4"/>
+<text class="th" x="464" y="202" text-anchor="middle" dominant-baseline="central" fill="#26215C">themes/blowfish</text>
+<text class="ts" x="464" y="224" text-anchor="middle" dominant-baseline="central" fill="#3C3489">Тема — внешний репозиторий</text>
+
+<line x1="340" y1="264" x2="340" y2="324" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<rect x="180" y="324" width="320" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text class="th" x="340" y="342" text-anchor="middle" dominant-baseline="central" fill="#412402">Hugo Extended</text>
+<text class="ts" x="340" y="360" text-anchor="middle" dominant-baseline="central" fill="#633806">Собирает всё вместе</text>
+
+<line x1="340" y1="380" x2="340" y2="440" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<rect x="180" y="440" width="320" height="56" rx="8" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
+<text class="th" x="340" y="458" text-anchor="middle" dominant-baseline="central" fill="#173404">public/</text>
+<text class="ts" x="340" y="476" text-anchor="middle" dominant-baseline="central" fill="#27500A">Готовый статический сайт</text>
+</svg>

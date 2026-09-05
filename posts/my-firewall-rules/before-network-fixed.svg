@@ -1,0 +1,99 @@
+<svg viewBox="0 0 1100 560" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <style>
+    .seg { fill: none; stroke: #94a3b8; stroke-width: 1.5; }
+    .segLabel { fill: #64748b; font-size: 13px; font-weight: 600; letter-spacing: .02em; }
+    .svc { fill: #eef2f7; stroke: #cbd5e1; stroke-width: 1; }
+    .svcLabel { fill: #334155; font-size: 12px; }
+    .traefik { fill: #fde68a; stroke: #d97706; stroke-width: 1.5; }
+    .traefikLabel { fill: #7c2d12; font-size: 12px; font-weight: 700; }
+    .conn { stroke: #cbd5e1; stroke-width: 1.2; }
+    .title { fill: #0f172a; font-size: 16px; font-weight: 700; }
+    .note { fill: #7c2d12; font-size: 12px; }
+    .access { fill: #64748b; font-size: 11px; }
+  </style>
+
+  <text x="20" y="30" class="title">До: четыре сегмента, Traefik растворён в Homelab</text>
+
+  <!-- LAN -->
+  <rect x="20" y="70" width="150" height="70" class="seg" rx="12"/>
+  <text x="34" y="94" class="segLabel">LAN</text>
+  <text x="34" y="113" class="svcLabel">доверенные</text>
+  <text x="34" y="129" class="svcLabel">устройства</text>
+
+  <!-- WiFi -->
+  <rect x="20" y="165" width="150" height="70" class="seg" rx="12"/>
+  <text x="34" y="189" class="segLabel">WiFi (opt1)</text>
+  <text x="34" y="208" class="svcLabel">TV, консоли,</text>
+  <text x="34" y="224" class="svcLabel">мобильные</text>
+
+  <!-- YouTube -->
+  <rect x="20" y="260" width="150" height="70" class="seg" rx="12"/>
+  <text x="34" y="284" class="segLabel">YouTube (opt3)</text>
+  <text x="34" y="303" class="svcLabel">съёмочное</text>
+  <text x="34" y="319" class="svcLabel">оборудование</text>
+
+  <!-- Homelab -->
+  <rect x="225" y="65" width="735" height="335" class="seg" stroke="#475569" stroke-width="2" rx="12"/>
+  <text x="248" y="94" class="segLabel" font-size="14">Homelab (opt2) — один Docker-хост, одна docker-сеть</text>
+
+  <!-- services -->
+  <rect x="250" y="120" width="145" height="46" class="svc" rx="8"/>
+  <text x="266" y="148" class="svcLabel">Sonarr</text>
+
+  <rect x="415" y="120" width="145" height="46" class="svc" rx="8"/>
+  <text x="431" y="148" class="svcLabel">Radarr</text>
+
+  <rect x="580" y="120" width="145" height="46" class="svc" rx="8"/>
+  <text x="596" y="148" class="svcLabel">Vaultwarden</text>
+
+  <rect x="745" y="120" width="175" height="46" class="svc" rx="8"/>
+  <text x="761" y="148" class="svcLabel">Authentik</text>
+
+  <rect x="250" y="190" width="145" height="46" class="svc" rx="8"/>
+  <text x="266" y="218" class="svcLabel">Komodo</text>
+
+  <rect x="415" y="190" width="145" height="46" class="svc" rx="8"/>
+  <text x="431" y="218" class="svcLabel">Forgejo</text>
+
+  <rect x="580" y="190" width="145" height="46" class="svc" rx="8"/>
+  <text x="596" y="218" class="svcLabel">Prowlarr</text>
+
+  <rect x="745" y="190" width="175" height="46" class="svc" rx="8"/>
+  <text x="761" y="218" class="svcLabel">… ещё ~15</text>
+
+  <!-- Traefik -->
+  <rect x="250" y="275" width="245" height="65" class="traefik" rx="8"/>
+  <text x="268" y="301" class="traefikLabel">Traefik</text>
+  <text x="268" y="320" class="svcLabel">общая сеть «proxy»</text>
+  <text x="268" y="336" class="svcLabel">равные права с соседями</text>
+
+  <!-- Flat network connections -->
+  <g class="conn">
+    <line x1="322" y1="166" x2="322" y2="190"/>
+    <line x1="487" y1="166" x2="487" y2="190"/>
+    <line x1="652" y1="166" x2="652" y2="190"/>
+    <line x1="832" y1="166" x2="832" y2="190"/>
+
+    <line x1="322" y1="236" x2="322" y2="275"/>
+    <line x1="487" y1="236" x2="420" y2="275"/>
+    <line x1="652" y1="236" x2="490" y2="290"/>
+    <line x1="832" y1="236" x2="495" y2="305"/>
+  </g>
+
+  <!-- External segment access -->
+  <g class="conn" stroke-dasharray="4 3">
+    <line x1="170" y1="105" x2="225" y2="145"/>
+    <line x1="170" y1="200" x2="225" y2="215"/>
+    <line x1="170" y1="295" x2="225" y2="275"/>
+  </g>
+
+  <rect x="105" y="345" width="150" height="45" fill="#ffffff" opacity="0.96"/>
+  <text x="116" y="360" class="access">точечные разрешения</text>
+  <text x="116" y="376" class="access">(Plex, Postgres…)</text>
+
+  <!-- Bottom explanation in dedicated area -->
+  <rect x="225" y="430" width="735" height="76" fill="#fff7ed" stroke="#fed7aa" rx="10"/>
+  <text x="248" y="454" class="note">Traefik виден и достижим точно так же, как любой другой контейнер рядом.</text>
+  <text x="248" y="474" class="note">Он находится в той же общей сети и не имеет отдельного периметра.</text>
+  <text x="248" y="494" class="note">Компрометация соседнего сервиса потенциально открывает путь к нему.</text>
+</svg>

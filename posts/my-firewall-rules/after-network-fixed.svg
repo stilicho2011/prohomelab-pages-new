@@ -1,0 +1,97 @@
+<svg viewBox="0 0 1100 560" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <style>
+    .seg { fill: #eef2f7; stroke: #94a3b8; stroke-width: 1.5; rx: 12; }
+    .segLabel { fill: #334155; font-size: 13px; font-weight: 700; }
+    .svcLabel { fill: #475569; font-size: 11px; }
+    .traefikSeg { fill: #fde68a; stroke: #d97706; stroke-width: 2; rx: 12; }
+    .traefikLabel { fill: #7c2d12; font-size: 13px; font-weight: 700; }
+    .arrow { stroke: #0ea5e9; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+    .arrowBack { stroke: #16a34a; stroke-width: 1.6; fill: none; marker-end: url(#arrowGreen); }
+    .lbl { fill: #0369a1; font-size: 11px; font-weight: 600; }
+    .lblBack { fill: #15803d; font-size: 11px; font-weight: 600; }
+    .title { fill: #0f172a; font-size: 16px; font-weight: 700; }
+  </style>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0ea5e9"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#16a34a"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="28" class="title">После: Traefik — отдельный сегмент со своим периметром</text>
+
+  <!-- LAN -->
+  <rect x="20" y="70" width="145" height="60" class="seg"/>
+  <text x="32" y="92" class="segLabel">LAN</text>
+  <text x="32" y="110" class="svcLabel">доверенные устройства</text>
+
+  <!-- WiFi -->
+  <rect x="20" y="155" width="145" height="60" class="seg"/>
+  <text x="32" y="177" class="segLabel">WiFi (opt1)</text>
+  <text x="32" y="195" class="svcLabel">TV, консоли</text>
+
+  <!-- YouTube -->
+  <rect x="20" y="240" width="145" height="60" class="seg"/>
+  <text x="32" y="262" class="segLabel">YouTube (opt3)</text>
+  <text x="32" y="280" class="svcLabel">съёмочное оборудование</text>
+
+  <!-- Homelab -->
+  <rect x="220" y="70" width="330" height="360" class="seg" stroke="#475569" stroke-width="2"/>
+  <text x="238" y="96" class="segLabel">Homelab (opt2)</text>
+  <text x="238" y="115" class="svcLabel">только сервисы, у каждого стэка — своя docker-сеть</text>
+
+  <rect x="245" y="140" width="125" height="42" fill="#f8fafc" stroke="#cbd5e1" rx="6"/>
+  <text x="258" y="165" class="svcLabel">Sonarr</text>
+  <rect x="400" y="140" width="125" height="42" fill="#f8fafc" stroke="#cbd5e1" rx="6"/>
+  <text x="413" y="165" class="svcLabel">Radarr</text>
+
+  <rect x="245" y="195" width="125" height="42" fill="#f8fafc" stroke="#cbd5e1" rx="6"/>
+  <text x="258" y="220" class="svcLabel">Vaultwarden</text>
+  <rect x="400" y="195" width="125" height="42" fill="#f8fafc" stroke="#cbd5e1" rx="6"/>
+  <text x="413" y="220" class="svcLabel">Authentik</text>
+
+  <rect x="245" y="250" width="125" height="42" fill="#f8fafc" stroke="#cbd5e1" rx="6"/>
+  <text x="258" y="275" class="svcLabel">Komodo</text>
+  <rect x="400" y="250" width="125" height="42" fill="#f8fafc" stroke="#cbd5e1" rx="6"/>
+  <text x="413" y="275" class="svcLabel">Forgejo</text>
+
+  <rect x="245" y="305" width="280" height="42" fill="#f8fafc" stroke="#cbd5e1" rx="6"/>
+  <text x="258" y="330" class="svcLabel">… ещё ~25 сервисов, каждый в своей сети</text>
+
+  <!-- Traefik segment -->
+  <rect x="735" y="155" width="325" height="155" class="traefikSeg"/>
+  <text x="753" y="183" class="traefikLabel">Traefik (opt6)</text>
+  <text x="753" y="204" class="svcLabel">LXC, бинарник + CrowdSec (apt)</text>
+  <text x="753" y="222" class="svcLabel">свой периметр в firewall</text>
+  <text x="753" y="242" class="svcLabel">DNS · block Private_Networks</text>
+  <text x="753" y="260" class="svcLabel">default allow → интернет</text>
+
+  <!-- Homelab -> Traefik -->
+  <path d="M550,195 C620,175 675,175 735,205" class="arrow"/>
+  <rect x="558" y="140" width="165" height="40" fill="#eef2f7" opacity="0.96"/>
+  <text x="565" y="155" class="lbl">Traefik → сервис:порт</text>
+  <text x="565" y="171" class="lbl">(~30 точечных правил)</text>
+
+  <!-- Traefik -> Homelab -->
+  <path d="M735,265 C665,290 620,300 550,275" class="arrowBack"/>
+  <rect x="558" y="295" width="170" height="40" fill="#eef2f7" opacity="0.96"/>
+  <text x="565" y="310" class="lblBack">Homelab → Traefik:443</text>
+  <text x="565" y="326" class="lblBack">(proxy, ForwardAuth, OIDC, Periphery)</text>
+
+  <!-- Other segments -> Traefik:443 -->
+  <path d="M165,100 C350,45 600,55 735,180" class="arrowBack"/>
+  <path d="M165,185 C360,120 600,120 735,205" class="arrowBack"/>
+  <path d="M165,270 C370,335 590,325 735,250" class="arrowBack"/>
+
+  <rect x="205" y="43" width="500" height="25" fill="#ffffff" opacity="0.92"/>
+  <text x="215" y="59" class="lblBack">там, где нужен доступ к сервисам через прокси — тоже открыт путь к Traefik:443</text>
+
+  <!-- Security note -->
+  <rect x="735" y="350" width="325" height="72" fill="#fff7ed" stroke="#fed7aa" rx="8"/>
+  <text x="753" y="373" class="svcLabel" fill="#7c2d12">Компрометация сервиса в Homelab</text>
+  <text x="753" y="390" class="svcLabel" fill="#7c2d12">больше не даёт прямого доступа к Traefik</text>
+  <text x="753" y="407" class="svcLabel" fill="#7c2d12">и его конфигурации.</text>
+</svg>

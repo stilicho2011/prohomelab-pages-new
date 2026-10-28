@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="960" height="460" font-family="Inter, Segoe UI, Roboto, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4ade80"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f87171"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="460" rx="16" fill="#0f172a"/>
+  <text x="480" y="44" text-anchor="middle" font-size="22" font-weight="700" fill="#f1f5f9">Как Dozzle обновляет контейнер и откатывается при сбое</text>
+
+  <!-- Step 1 -->
+  <rect x="40" y="90" width="200" height="86" rx="12" fill="#1e293b" stroke="#475569"/>
+  <text x="140" y="124" text-anchor="middle" font-size="15" font-weight="600" fill="#f1f5f9">1. Вышел новый образ</text>
+  <text x="140" y="148" text-anchor="middle" font-size="12.5" fill="#94a3b8">digest в registry</text>
+  <text x="140" y="165" text-anchor="middle" font-size="12.5" fill="#94a3b8">отличается от текущего</text>
+
+  <!-- Step 2 -->
+  <rect x="280" y="90" width="200" height="86" rx="12" fill="#1e293b" stroke="#475569"/>
+  <text x="380" y="124" text-anchor="middle" font-size="15" font-weight="600" fill="#f1f5f9">2. Старый контейнер</text>
+  <text x="380" y="148" text-anchor="middle" font-size="12.5" fill="#94a3b8">переименован</text>
+  <text x="380" y="165" text-anchor="middle" font-size="12.5" fill="#94a3b8">и сохранен</text>
+
+  <!-- Step 3 -->
+  <rect x="520" y="90" width="200" height="86" rx="12" fill="#1e293b" stroke="#475569"/>
+  <text x="620" y="124" text-anchor="middle" font-size="15" font-weight="600" fill="#f1f5f9">3. Запуск нового</text>
+  <text x="620" y="148" text-anchor="middle" font-size="12.5" fill="#94a3b8">тома и bind mount</text>
+  <text x="620" y="165" text-anchor="middle" font-size="12.5" fill="#94a3b8">сохраняются</text>
+
+  <!-- Decision -->
+  <polygon points="840,80 930,133 840,186 750,133" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="840" y="123" text-anchor="middle" font-size="12.5" font-weight="600" fill="#fde68a">10 секунд</text>
+  <text x="840" y="140" text-anchor="middle" font-size="12.5" fill="#fde68a">без рестартов</text>
+  <text x="840" y="157" text-anchor="middle" font-size="12.5" fill="#fde68a">и healthy?</text>
+
+  <!-- Arrows top row -->
+  <line x1="240" y1="133" x2="278" y2="133" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="480" y1="133" x2="518" y2="133" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="720" y1="133" x2="748" y2="133" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Yes branch -->
+  <path d="M840,186 L840,262" stroke="#4ade80" stroke-width="2" fill="none" marker-end="url(#arrG)"/>
+  <text x="852" y="230" font-size="13" font-weight="700" fill="#4ade80">да</text>
+
+  <!-- No branch: leaves the lower-left edge of the diamond, runs below step 3 -->
+  <path d="M795,160 L795,214 L600,214 L600,262" stroke="#f87171" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#arrR)"/>
+  <text x="700" y="206" text-anchor="middle" font-size="13" font-weight="700" fill="#f87171">нет</text>
+
+  <!-- Failure -->
+  <rect x="490" y="266" width="220" height="120" rx="12" fill="#2a0f12" stroke="#f87171"/>
+  <text x="600" y="298" text-anchor="middle" font-size="15" font-weight="600" fill="#fecaca">Автоматический откат</text>
+  <text x="600" y="326" text-anchor="middle" font-size="12.5" fill="#fca5a5">новый контейнер удален,</text>
+  <text x="600" y="344" text-anchor="middle" font-size="12.5" fill="#fca5a5">старый возвращен</text>
+  <text x="600" y="362" text-anchor="middle" font-size="12.5" fill="#fca5a5">и работает как раньше</text>
+
+  <!-- Success -->
+  <rect x="730" y="266" width="210" height="120" rx="12" fill="#052e1a" stroke="#4ade80"/>
+  <text x="835" y="298" text-anchor="middle" font-size="15" font-weight="600" fill="#bbf7d0">Обновление принято</text>
+  <text x="835" y="326" text-anchor="middle" font-size="12.5" fill="#86efac">старый контейнер удален,</text>
+  <text x="835" y="344" text-anchor="middle" font-size="12.5" fill="#86efac">лишние образы очищены,</text>
+  <text x="835" y="362" text-anchor="middle" font-size="12.5" fill="#86efac">остается один предыдущий</text>
+
+  <!-- Note -->
+  <rect x="40" y="266" width="430" height="120" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="60" y="296" font-size="14" font-weight="600" fill="#f1f5f9">Важно помнить</text>
+  <text x="60" y="320" font-size="12.5" fill="#94a3b8">Работает для плавающих тегов вроде latest.</text>
+  <text x="60" y="338" font-size="12.5" fill="#94a3b8">Образ с зафиксированной версией обновлять некуда.</text>
+  <text x="60" y="356" font-size="12.5" fill="#94a3b8">Базы данных лучше пометить лейблом</text>
+  <text x="60" y="374" font-size="12.5" fill="#94a3b8">dev.dozzle.update=off.</text>
+
+  <text x="480" y="428" text-anchor="middle" font-size="12" fill="#64748b">Схема по статье prohomelab.com/posts/dozzle</text>
+</svg>
